@@ -1,3 +1,5 @@
+# Live Link
+[![Live Demo]([https://img.shields.io/badge/Live-Demo-00C853?style=for-the-badge&logo=vercel&logoColor=white)](https://your-live-link-here.com](https://level-2-assignment-3-6lyx.onrender.com/))
 # Project setup
 1. First install the packages . e.g : mongoos,express,typescript and other things
 2. Edited the ts configue file for root and out directory selection
