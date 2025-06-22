@@ -23,7 +23,7 @@ app.use((error: any, req: Request, res: Response, next: NextFunction) => {
         message = `The ${field} '${value}' is already in use.`
     }
     else if (error.name === "CastError") {
-        statusCode = 400;
+        statusCode = 404;
         message = `The ${error.path} ${error.value} is not a valid input`
     }
     else {
