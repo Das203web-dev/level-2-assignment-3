@@ -44,6 +44,24 @@ const booksSchema = new Schema<IBooks>({
     versionKey: false,
     timestamps: true
 })
+booksSchema.post("findOneAndUpdate", async function (doc, next) {
+    console.log(doc);
+    try {
+        if (doc && doc.copies > 1) {
+            doc.available = true
+            await doc.save()
+        }
+        else {
+            doc.available = false;
+            await doc.save()
+        }
+        next()
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {
+        next(error)
+    }
+})
 booksSchema.post("findOneAndDelete", async function (doc, next) {
     try {
         if (doc) {
