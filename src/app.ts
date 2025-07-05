@@ -1,8 +1,20 @@
 import express, { Application, NextFunction, Request, Response } from "express"
 import { bookRoutes } from "./app/controller/books.controller";
 import { borrowRoutes } from "./app/controller/borrow.controller";
+import cors from "cors";
+
 const app: Application = express()
 app.use(express.json());
+app.use((req, res, next) => {
+    console.log("Incoming request origin:", req.headers.origin);
+    next();
+});
+
+app.use(cors({
+    origin: "https://roaring-twilight-d31f97.netlify.app/",
+    credentials: true
+}));
+
 app.use("/api/books", bookRoutes);
 app.use("/api/borrow", borrowRoutes)
 app.get("/", async (req: Request, res: Response) => {

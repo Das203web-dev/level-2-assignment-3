@@ -28,7 +28,8 @@ bookRoutes.get("/", async (req: Request, res: Response, next: NextFunction) => {
             result = await Book.find({ genre: filter }).sort({ [sortBy as string]: sortType }).limit(limitValue)
         }
         else {
-            result = await Book.find().limit(limitValue);
+            result = await Book.find();
+            // result = await Book.find().limit(limitValue);
         }
         res.status(200).json({
             success: true,
@@ -68,6 +69,7 @@ bookRoutes.put("/:bookId", async (req: Request, res: Response, next: NextFunctio
         const bookID = req.params.bookId;
         const body = req.body;
         const result = await Book.findOneAndUpdate({ _id: bookID }, body, { new: true, runValidators: true });
+        console.log(result);
         res.status(200).json({
             success: true,
             message: "Book updated successfully",
