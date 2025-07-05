@@ -11,7 +11,7 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-    origin: "https://roaring-twilight-d31f97.netlify.app/api",
+    origin: "https://roaring-twilight-d31f97.netlify.app/",
     credentials: true
 }));
 
