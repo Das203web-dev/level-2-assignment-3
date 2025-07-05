@@ -71,3 +71,8 @@ Borrow a book by providing book ID, quantity, and due date.
 
 Get a summary of borrowed books grouped by book, including total quantity borrowed for each.  
 - Response: List of books with their title, ISBN, and total borrowed quantity
+
+# Useful Links
+- Backend Repo: https://github.com/Das203web-dev/level-2-assignment-3  
+- Backend Live API: https://level-2-assignment-3-6lyx.onrender.com/  
+- Frontend Live Demo: https://roaring-twilight-d31f97.netlify.app/
